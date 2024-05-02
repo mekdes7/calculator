@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>calculator</title>
+    <style>
+        body{
+            background-image: linear-gradient(90deg, #04022c 0%, #2c0477 35%, #ffea00 100%);
+        }
+    
+      
+        .input{
+            padding: 40px 40px 40px 40px;
+            margin: 150px 300px 300px 300px;
+            text-align: center;
+            background-color: goldenrod;
+            box-shadow: #04022c;
+            border: 30px thick black;
+        }
+    </style>
+</head>
+<body>
+  
+   
+    <div class="input">
+    <label>enter your first number</label>
+    <input id="num1">
+    <br>
+    <label>enter your second number</label>
+    <input id="num2">
+    <br>
+    <button onclick="add()">+</button>
+    <button onclick="subtract()">-</button>
+    <button onclick="multiply()">*</button>
+    <button onclick="divide()">/</button>
+    <button onclick="modulus()">%</button>
+    <button onclick="exponential()">**</button>
+    <br>
+    <button id="result">Result</button>
+</div>
+    <script>
+        function add(){
+            var x=parseFloat(document.getElementById("num1").value);
+            var y=parseFloat(document.getElementById("num2").value);
+            var z=x+y;
+            document.getElementById("result").innerHTML=z;          
+          
+        }
+        function subtract(){
+            var x=parseFloat(document.getElementById("num1").value);
+            var y=parseFloat(document.getElementById("num2").value);
+            var z=x-y;
+            document.getElementById("result").innerHTML=z;           
+          
+        }
+        function multiply(){
+            var x=parseFloat(document.getElementById("num1").value);
+            var y=parseFloat(document.getElementById("num2").value);
+            var z=x*y;
+            document.getElementById("result").innerHTML=z;
+        
+        }
+        function divide(){
+            var x=parseFloat(document.getElementById("num1").value);
+            var y=parseFloat(document.getElementById("num2").value);
+            var z=x/y;
+            document.getElementById("result").innerHTML=z;
+          
+        }
+        function modulus(){
+            var x=parseFloat(document.getElementById("num1").value);
+            var y=parseFloat(document.getElementById("num2").value);
+            var z=x%y;
+            if(z==0){
+                document.getElementById("result").innerHTML=y +" "+"is can be divided by"+" "+x+" "+"the reminder is"+" "+z;
+            }
+            else{
+                document.getElementById("result").innerHTML=y +" "+"is cannot be divided by"+" "+x+" "+"the reminder is"+" "+z;
+            }
+            console.log(z);
+       
+        }
+        
+        function exponential(){
+            var x=parseFloat(document.getElementById("num1").value);
+            var y=parseFloat(document.getElementById("num2").value);
+            var z=x**y;
+            document.getElementById("result").innerHTML="the exponential is"+" "+z;
+            console.log(z);
+        }
+
+    </script>
+</body>
+</html>
